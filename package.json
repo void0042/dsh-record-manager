@@ -1,0 +1,71 @@
+{
+  "name": "dsh-record-manager",
+  "version": "0.1.0",
+  "description": "DSH 外置笔记插件：把笔记存成磁盘上的 .txt/.md 文件，提供 Web 面板、独立窗口与 record_note Agent 工具。",
+  "type": "module",
+  "main": "index.js",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "popout.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "src/",
+    "tools/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build:client": "node tools/build-client.mjs",
+    "build:popout": "node tools/build-popout.mjs",
+    "build": "npm run build:client && npm run build:popout"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "notes",
+    "notepad",
+    "markdown"
+  ],
+  "license": "MIT",
+  "author": "void0042",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/void0042/dsh-record-manager.git"
+  },
+  "homepage": "https://github.com/void0042/dsh-record-manager#readme",
+  "bugs": {
+    "url": "https://github.com/void0042/dsh-record-manager/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  },
+  "devDependencies": {
+    "@codemirror/commands": "^6.11.1",
+    "@codemirror/search": "^6.7.2",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/view": "^6.43.15",
+    "esbuild": "^0.28.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

@@ -1,0 +1,17 @@
+# dependencies
+node_modules/
+
+# build / cache
+.npm-cache/
+*.log
+
+# 本地笔记数据（若你把记录目录设在仓库内，注意别误提交）
+.trash/
+.dsh-record-manager.json
+日常/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

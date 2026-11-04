@@ -1,0 +1,13 @@
+# dsh-record-manager —— 外置笔记插件挂载声明
+#
+# 记录根目录（root）与每日流水文件名（dailyFile）可在此处的 config 中修改。
+# 不写 root 时，默认使用 <用户主目录>/dsh-notes；也可装好后在插件的
+# "配置"页里改（会持久化到记录目录下的 .dsh-record-manager.json）。
+#
+# 示例（取消注释并改成你自己的路径）：
+#   root: 'D:/notes'
+- insert:
+    - id: dsh-record-manager
+      name: 'dsh-record-manager'
+      config:
+        dailyFile: '日常/记录.txt'
